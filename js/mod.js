@@ -1,19 +1,19 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
+	name: "The Superhero Tree",
+	id: "SHtree",
+	author: "Jckwik",
+	pointsName: "bags of money",
 	discordName: "",
 	discordLink: "",
-	changelogLink: "https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md",
+	changelogLink: "https://github.com/jckwik/The-Modding-Tree/blob/master/changelog.md",
     offlineLimit: 1,  // In hours
     initialStartPoints: new Decimal (10) // Used for hard resets and new players
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.0.1",
+	name: "Beginning of civilization",
 }
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
@@ -34,8 +34,14 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1)
-	return gain
+	let gain = new Decimal(0);
+	gain = gain.add(buyableEffect("p", 11));
+	gain = gain.add(buyableEffect("p", 12));
+	gain = gain.add(buyableEffect("p", 13));
+	gain = gain.add(buyableEffect("p", 21));
+	gain = gain.add(buyableEffect("p", 22));
+	gain = gain.add(buyableEffect("p", 23));
+	return gain;
 }
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
